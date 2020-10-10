@@ -1,10 +1,22 @@
-import unittest
+import pytest
 
-class NumbersTest(unittest.TestCase):
+def setup_module(module):
+    # init_something()
+    pass
 
-    def test_equal(self):
-        self.assertEqual(1 + 1, 1)
 
-if __name__ == '__main__':
-    unittest.main()
-    
+def teardown_module(module):
+    # teardown_something()
+    pass
+
+
+def test_upper():
+    assert 'foo'.upper() == 'FOO'
+
+
+def test_isupper():
+    assert 'FOO'.isupper()
+
+
+def test_failed_upper():
+    assert 'Foo'.upper() == 'FOO'
